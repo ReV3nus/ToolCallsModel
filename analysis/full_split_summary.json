@@ -1,0 +1,91 @@
+{
+  "version": "xlam_full_v1",
+  "seed": 5300,
+  "source_sha256": "4ef5c6f0dc552f2231f93f5853a9ef431e9e806d7aa514d0f6b615606ce576c6",
+  "m1_archive_sha256": "53d112520e30808ebfc25038340c9724fee75c9a0a7f80ce1db370d0cfb3347d",
+  "target_counts": {
+    "train": 48000,
+    "dev": 6000,
+    "test": 6000
+  },
+  "splits": {
+    "train": {
+      "records": 48000,
+      "flagged_records": 1103,
+      "categories": {
+        "parallel_multiple": 19275,
+        "multiple": 16359,
+        "parallel": 5927,
+        "simple": 6439
+      },
+      "call_patterns": {
+        "distinct_tools": 16299,
+        "single_call": 22798,
+        "repeated_tool": 8903
+      }
+    },
+    "dev": {
+      "records": 6000,
+      "flagged_records": 125,
+      "categories": {
+        "parallel": 728,
+        "multiple": 2040,
+        "simple": 823,
+        "parallel_multiple": 2409
+      },
+      "call_patterns": {
+        "repeated_tool": 1098,
+        "single_call": 2863,
+        "distinct_tools": 2039
+      }
+    },
+    "test": {
+      "records": 6000,
+      "flagged_records": 143,
+      "categories": {
+        "multiple": 2039,
+        "parallel_multiple": 2468,
+        "parallel": 732,
+        "simple": 761
+      },
+      "call_patterns": {
+        "single_call": 2800,
+        "distinct_tools": 2110,
+        "repeated_tool": 1090
+      }
+    }
+  },
+  "query_groups": 53872,
+  "grouping": "M1 NFKC/casefold/whitespace normalization and conservative quote/number masking",
+  "allocation": "preserve all M1 group assignments; seeded shuffle of remaining groups; largest remaining count deficit",
+  "records_removed": 0,
+  "records_rewritten": 0,
+  "files_sha256": {
+    "train.jsonl": "968ce0bd1f11b68ef87e1c95e131acef27863ab733cbdf76504585ca54a4c35a",
+    "dev.jsonl": "5f9d845e1b1ca3308bebe1015ffc8828f316e77af67c318200c9788d8c982065",
+    "test.jsonl": "3434ab3d2d13d2e897c557368300c2fbac2dfe000623d7fb08c7553aaad60b46",
+    "metadata.jsonl": "a7fa4d9a7ac1528a2e27a167ec2990fb3c6635fae4dabc26458f46e15eba4ab7"
+  },
+  "verification": {
+    "passed": true,
+    "source_content_preserved": 60000,
+    "m1_assignments_preserved": 19795,
+    "cross_split_overlap": {
+      "train_dev": {
+        "ids": 0,
+        "normalized_queries": 0,
+        "recognized_templates": 0
+      },
+      "train_test": {
+        "ids": 0,
+        "normalized_queries": 0,
+        "recognized_templates": 0
+      },
+      "dev_test": {
+        "ids": 0,
+        "normalized_queries": 0,
+        "recognized_templates": 0
+      }
+    }
+  }
+}
