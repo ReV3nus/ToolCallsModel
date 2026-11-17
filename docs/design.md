@@ -19,7 +19,7 @@ The task uses a single request and supplied tool definitions. The output is the 
 
 **Simple:** lexical tool scoring with fixed rules for call count and argument extraction. It provides a cheap reference without training a neural model from scratch. Rules and thresholds are selected on development data.
 
-**Strong:** a generic pretrained instruction model, supervised-fine-tuned on the original training pairs and all supplied candidates. Use LoRA if required by available hardware. Neither baseline may read reference calls, reference call count, or offline metadata at inference. Avoid an initialization already fine-tuned on the complete xLAM release when treating our xLAM holdout as independent.
+**Strong:** Qwen2.5-1.5B-Instruct with response-only LoRA SFT on the original training pairs and all supplied candidates. [Training settings and commands](strong-baseline.md) define the reproducible run. Neither baseline may read reference calls, reference call count, or offline metadata at inference. Avoid an initialization already fine-tuned on the complete xLAM release when treating our xLAM holdout as independent.
 
 ## Two extensions
 
@@ -39,4 +39,4 @@ Report overall scores and breakdowns by task category, repeated versus distinct 
 
 [Data documentation](data.md) contains the fixed splits, profiles, grouping rules, and known issues. Original requests and schemas remain intact; derived stress tests inherit the parent's partition. Tools may recur across splits. Unseen-tool evaluation and external BFCL scoring are optional later checks.
 
-The historical 98.1% lexical-selection diagnostic applies only to the old M1 single-call development subset. It is not a complete-call result on the full release. Next implement the baselines, select the training environment, measure actual token lengths, and run a small end-to-end experiment before full training.
+The historical 98.1% lexical-selection diagnostic applies only to the old M1 single-call development subset. It is not a complete-call result on the full release. Strong-baseline training and full dev/test evaluation are complete; [results and error analysis](strong-baseline.md#results-and-error-analysis) describe the current starting point. The simple-baseline implementation has been integrated. Remaining MS2 work is to record its full-split scores and usage, compare both systems, and write the report.

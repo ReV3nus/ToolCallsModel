@@ -1,0 +1,72 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "prompt_version": "xlam-json-v1",
+  "prompt_sha256": "f7aeba524a61859b4ac44040b2854a36a33719c4e9f1826bb27670a1645ca38f",
+  "splits": {
+    "train": {
+      "input_tokens": {
+        "n": 48000,
+        "min": 111,
+        "mean": 349.22,
+        "median": 314,
+        "p95": 695,
+        "p99": 916,
+        "max": 2252
+      },
+      "target_tokens": {
+        "n": 48000,
+        "min": 12,
+        "mean": 40.64,
+        "median": 37,
+        "p95": 77,
+        "p99": 113,
+        "max": 1771
+      },
+      "total_tokens": {
+        "n": 48000,
+        "min": 126,
+        "mean": 389.86,
+        "median": 355,
+        "p95": 741,
+        "p99": 969,
+        "max": 2272
+      },
+      "source_sha256": "968ce0bd1f11b68ef87e1c95e131acef27863ab733cbdf76504585ca54a4c35a",
+      "over_configured_context": 0,
+      "targets_over_generation_budget": 0
+    },
+    "dev": {
+      "input_tokens": {
+        "n": 6000,
+        "min": 112,
+        "mean": 348.82,
+        "median": 313,
+        "p95": 687,
+        "p99": 910,
+        "max": 2252
+      },
+      "target_tokens": {
+        "n": 6000,
+        "min": 12,
+        "mean": 40.3,
+        "median": 36,
+        "p95": 77,
+        "p99": 117,
+        "max": 321
+      },
+      "total_tokens": {
+        "n": 6000,
+        "min": 127,
+        "mean": 389.12,
+        "median": 353,
+        "p95": 737,
+        "p99": 960,
+        "max": 2272
+      },
+      "source_sha256": "5f9d845e1b1ca3308bebe1015ffc8828f316e77af67c318200c9788d8c982065",
+      "over_configured_context": 0,
+      "targets_over_generation_budget": 0
+    }
+  }
+}

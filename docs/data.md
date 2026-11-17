@@ -56,9 +56,11 @@ Lengths use compact JSON before prompts and chat templates. Measure actual token
 
 The audit flags 1,371 records for recognized type conflicts or repeated candidate names. A flag may identify a schema issue rather than a wrong answer. All flagged records remain; report flagged/unflagged diagnostics and version any later corrections.
 
+Structural checks do not detect every underspecified request or equivalent use of optional defaults. Manual development-set examples are discussed in the [strong-baseline analysis](strong-baseline.md).
+
 The conservative task fingerprint finds 380 copies beyond the first occurrence. They remain in the data but share their request group. The largest recognized group contains 47 records. Exact distributions and per-record flags are in [full_data_profile.json](../analysis/full_data_profile.json).
 
-Evaluation reports single/multiple candidates and calls, repeated/distinct tools, and unused candidates separately. See [scoring.md](../scoring.md) for definitions. The earlier 98.1% lexical-selection diagnostic applies only to the historical M1 subset; no baseline scores are available for the full release.
+Evaluation reports single/multiple candidates and calls, repeated/distinct tools, and unused candidates separately. See [scoring.md](../scoring.md) for definitions and [strong-baseline.md](strong-baseline.md) for model results. The earlier 98.1% lexical-selection diagnostic applies only to the historical M1 subset.
 
 ## Reproduction
 

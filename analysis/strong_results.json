@@ -1,0 +1,350 @@
+{
+  "verified_utc": "2026-11-16T20:08:03.807588+00:00",
+  "model": {
+    "id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "adapter_sha256": "cb300d3fdfe4d722ab6a8fe5aa6a4bbc6dd277b30821fedd7ca9a9387301e891"
+  },
+  "data": {
+    "version": "xlam_full_v1",
+    "source_sha256": "4ef5c6f0dc552f2231f93f5853a9ef431e9e806d7aa514d0f6b615606ce576c6",
+    "files_sha256": {
+      "train.jsonl": "968ce0bd1f11b68ef87e1c95e131acef27863ab733cbdf76504585ca54a4c35a",
+      "dev.jsonl": "5f9d845e1b1ca3308bebe1015ffc8828f316e77af67c318200c9788d8c982065",
+      "test.jsonl": "3434ab3d2d13d2e897c557368300c2fbac2dfe000623d7fb08c7553aaad60b46",
+      "metadata.jsonl": "a7fa4d9a7ac1528a2e27a167ec2990fb3c6635fae4dabc26458f46e15eba4ab7"
+    }
+  },
+  "training": {
+    "examples": 48000,
+    "configuration": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "data_dir": "data/xlam_full_v1",
+      "cache_dir": "models/hf",
+      "model_local_dir": "models/qwen2.5-1.5b-instruct",
+      "seed": 5300,
+      "max_seq_length": 4096,
+      "epochs": 1,
+      "learning_rate": 0.0002,
+      "batch_size": 1,
+      "gradient_accumulation_steps": 16,
+      "warmup_ratio": 0.03,
+      "weight_decay": 0.01,
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "eval_examples": 128,
+      "eval_steps": 250,
+      "save_steps": 250,
+      "logging_steps": 25,
+      "generation_batch_size": 4,
+      "max_new_tokens": 2048
+    },
+    "versions": {
+      "torch": "2.9.1+cu128",
+      "transformers": "4.57.3",
+      "peft": "0.18.0",
+      "accelerate": "1.12.0"
+    },
+    "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+    "metrics": {
+      "train_runtime": 14832.3883,
+      "train_samples_per_second": 3.236,
+      "train_steps_per_second": 0.202,
+      "train_loss": 0.04065752565860748,
+      "epoch": 1,
+      "best_checkpoint": "runs\\strong\\full\\checkpoint-3000",
+      "best_eval_loss": 0.026448849588632584,
+      "peak_gpu_gib": 6.978036403656006
+    }
+  },
+  "evaluation": {
+    "dev": {
+      "examples": 6000,
+      "provided_predictions": 6000,
+      "scope": {
+        "split": "dev",
+        "examples": 6000,
+        "full_split": true
+      },
+      "scorer_version": "2.0",
+      "matching_mode": "multiset",
+      "metrics": {
+        "complete_request_accuracy": 0.8163333333333334,
+        "complete_call_accuracy": 0.8163333333333334,
+        "ordered_exact_match_accuracy": 0.8153333333333334,
+        "call_count_accuracy": 0.9881666666666666,
+        "tool_selection_accuracy": 0.9835,
+        "format_valid_rate": 0.9983333333333333,
+        "argument_accuracy_given_correct_tool": 0.8300288086764955,
+        "call_precision": 0.8640992035487448,
+        "call_recall": 0.8607150030126531,
+        "call_f1": 0.8624037832670925,
+        "tool_name_precision": 0.9926403871357999,
+        "tool_name_recall": 0.9887527615987146,
+        "tool_name_f1": 0.990692760476933
+      },
+      "counts": {
+        "correct": 4898,
+        "wrong_call_count": 61,
+        "wrong_tool": 28,
+        "wrong_arguments": 1003,
+        "invalid_format": 10,
+        "missing_prediction": 0
+      },
+      "breakdowns": {
+        "category": {
+          "multiple": {
+            "examples": 2040,
+            "correct": 1773,
+            "complete_request_accuracy": 0.8691176470588236
+          },
+          "parallel": {
+            "examples": 728,
+            "correct": 596,
+            "complete_request_accuracy": 0.8186813186813187
+          },
+          "parallel_multiple": {
+            "examples": 2409,
+            "correct": 1842,
+            "complete_request_accuracy": 0.7646326276463262
+          },
+          "simple": {
+            "examples": 823,
+            "correct": 687,
+            "complete_request_accuracy": 0.8347509113001215
+          }
+        },
+        "call_pattern": {
+          "distinct_tools": {
+            "examples": 2039,
+            "correct": 1539,
+            "complete_request_accuracy": 0.7547817557626287
+          },
+          "repeated_tool": {
+            "examples": 1098,
+            "correct": 899,
+            "complete_request_accuracy": 0.8187613843351548
+          },
+          "single_call": {
+            "examples": 2863,
+            "correct": 2460,
+            "complete_request_accuracy": 0.8592385609500524
+          }
+        },
+        "candidate_scope": {
+          "multiple": {
+            "examples": 4449,
+            "correct": 3615,
+            "complete_request_accuracy": 0.8125421443020904
+          },
+          "one": {
+            "examples": 1551,
+            "correct": 1283,
+            "complete_request_accuracy": 0.8272082527401676
+          }
+        },
+        "selection_scope": {
+          "all_candidates_referenced": {
+            "examples": 2348,
+            "correct": 1871,
+            "complete_request_accuracy": 0.7968483816013628
+          },
+          "has_unselected_candidate": {
+            "examples": 3652,
+            "correct": 3027,
+            "complete_request_accuracy": 0.8288608981380066
+          }
+        },
+        "call_count_bucket": {
+          "1": {
+            "examples": 2863,
+            "correct": 2460,
+            "complete_request_accuracy": 0.8592385609500524
+          },
+          "2": {
+            "examples": 2553,
+            "correct": 1998,
+            "complete_request_accuracy": 0.782608695652174
+          },
+          "3": {
+            "examples": 448,
+            "correct": 350,
+            "complete_request_accuracy": 0.78125
+          },
+          "4+": {
+            "examples": 136,
+            "correct": 90,
+            "complete_request_accuracy": 0.6617647058823529
+          }
+        },
+        "quality": {
+          "flagged": {
+            "examples": 125,
+            "correct": 40,
+            "complete_request_accuracy": 0.32
+          },
+          "unflagged": {
+            "examples": 5875,
+            "correct": 4858,
+            "complete_request_accuracy": 0.8268936170212766
+          }
+        }
+      },
+      "finish_reasons": {
+        "eos": 5997,
+        "length": 3
+      },
+      "generation_seconds": 7389.96899999999,
+      "generated_tokens": 245681,
+      "prediction_sha256": "cfaa86cb845f400e1774aa5943f9271269fe7695636889c555655d669a79d9fd"
+    },
+    "test": {
+      "examples": 6000,
+      "provided_predictions": 6000,
+      "scope": {
+        "split": "test",
+        "examples": 6000,
+        "full_split": true
+      },
+      "scorer_version": "2.0",
+      "matching_mode": "multiset",
+      "metrics": {
+        "complete_request_accuracy": 0.8176666666666667,
+        "complete_call_accuracy": 0.8176666666666667,
+        "ordered_exact_match_accuracy": 0.8163333333333334,
+        "call_count_accuracy": 0.9891666666666666,
+        "tool_selection_accuracy": 0.9855,
+        "format_valid_rate": 0.9981666666666666,
+        "argument_accuracy_given_correct_tool": 0.8296972771858616,
+        "call_precision": 0.8719020603165124,
+        "call_recall": 0.8674985145573381,
+        "call_f1": 0.8696947133283692,
+        "tool_name_precision": 0.9937294714840251,
+        "tool_name_recall": 0.9887106357694593,
+        "tool_name_f1": 0.9912137006701416
+      },
+      "counts": {
+        "correct": 4906,
+        "wrong_call_count": 54,
+        "wrong_tool": 22,
+        "wrong_arguments": 1007,
+        "invalid_format": 11,
+        "missing_prediction": 0
+      },
+      "breakdowns": {
+        "category": {
+          "multiple": {
+            "examples": 2039,
+            "correct": 1736,
+            "complete_request_accuracy": 0.8513977439921531
+          },
+          "parallel": {
+            "examples": 732,
+            "correct": 624,
+            "complete_request_accuracy": 0.8524590163934426
+          },
+          "parallel_multiple": {
+            "examples": 2468,
+            "correct": 1930,
+            "complete_request_accuracy": 0.7820097244732577
+          },
+          "simple": {
+            "examples": 761,
+            "correct": 616,
+            "complete_request_accuracy": 0.80946123521682
+          }
+        },
+        "call_pattern": {
+          "distinct_tools": {
+            "examples": 2110,
+            "correct": 1641,
+            "complete_request_accuracy": 0.7777251184834123
+          },
+          "repeated_tool": {
+            "examples": 1090,
+            "correct": 913,
+            "complete_request_accuracy": 0.8376146788990826
+          },
+          "single_call": {
+            "examples": 2800,
+            "correct": 2352,
+            "complete_request_accuracy": 0.84
+          }
+        },
+        "candidate_scope": {
+          "multiple": {
+            "examples": 4507,
+            "correct": 3666,
+            "complete_request_accuracy": 0.8134013756378966
+          },
+          "one": {
+            "examples": 1493,
+            "correct": 1240,
+            "complete_request_accuracy": 0.8305425318151373
+          }
+        },
+        "selection_scope": {
+          "all_candidates_referenced": {
+            "examples": 2371,
+            "correct": 1919,
+            "complete_request_accuracy": 0.809363137916491
+          },
+          "has_unselected_candidate": {
+            "examples": 3629,
+            "correct": 2987,
+            "complete_request_accuracy": 0.8230917608156517
+          }
+        },
+        "call_count_bucket": {
+          "1": {
+            "examples": 2800,
+            "correct": 2352,
+            "complete_request_accuracy": 0.84
+          },
+          "2": {
+            "examples": 2558,
+            "correct": 2054,
+            "complete_request_accuracy": 0.8029710711493354
+          },
+          "3": {
+            "examples": 485,
+            "correct": 393,
+            "complete_request_accuracy": 0.8103092783505155
+          },
+          "4+": {
+            "examples": 157,
+            "correct": 107,
+            "complete_request_accuracy": 0.6815286624203821
+          }
+        },
+        "quality": {
+          "flagged": {
+            "examples": 143,
+            "correct": 48,
+            "complete_request_accuracy": 0.3356643356643357
+          },
+          "unflagged": {
+            "examples": 5857,
+            "correct": 4858,
+            "complete_request_accuracy": 0.829434864264982
+          }
+        }
+      },
+      "finish_reasons": {
+        "eos": 6000
+      },
+      "generation_seconds": 5056.703999999998,
+      "generated_tokens": 243724,
+      "prediction_sha256": "a037a6eb225951b726e61f1f9956bccc422431d01d36a003c29d06e3574304af"
+    }
+  },
+  "verification": {
+    "full_id_coverage": true,
+    "prediction_hashes_match": true,
+    "source_files_unchanged": true,
+    "selected_adapter_matches_checkpoint": true,
+    "rescored_from_saved_predictions": true
+  }
+}
